@@ -17,6 +17,7 @@ const coverage = document.getElementById('coverage')
 const gust = document.getElementById('gust')
 const start = document.getElementById('start')
 const current = document.getElementById('current')
+const notif = document.getElementById('notification')
 
 const key = '4eb1171f375141c7a8a122848231010'
 
@@ -36,7 +37,7 @@ function timeFormat(text) {
   return formatter.format(parsed)
 }
 
-async function displayWeather(weather) {
+function displayWeather(weather) {
   title.textContent = `${weather.location.name}, ${weather.location.country}`
   time.textContent = `${timeFormat(weather.location.localtime)}`
   temperature.textContent = `${weather.current.temp_c}°C`
@@ -51,10 +52,17 @@ async function displayWeather(weather) {
   gust.textContent = `${weather.current.gust_kph} km/h`
 }
 
+async function loadAnimation() {
+  notif.style.display = 'flex'
+  const data = await getWeather(search.value)
+  notif.style.display = 'none'
+  return data
+}
+
 form.addEventListener('keypress', async e => {
   if (e.key === 'Enter') {
     e.preventDefault()
-    const weather = await getWeather(search.value)
+    const weather = await loadAnimation()
     displayWeather(weather)
     start.style.display = 'none'
     current.style.display = 'block'

@@ -82,12 +82,55 @@ main {
   align-items: center;
 }
 
-.card {
+section {
   background-color: $tint;
   width: clamp(600px, 50%, 700px);
   border-radius: 1em;
   margin-bottom: 1em;
   padding: 2em;
+}
+
+#slide {
+  display: flex;
+  gap: 1em;
+}
+
+#slide article:first-child {
+  flex: 1;
+}
+
+#forecast > h2 {
+  margin-bottom: 1em;
+}
+
+#forecast-right {
+  margin-left: auto;
+}
+
+#forecast-right h3 {
+  text-align: right;
+}
+
+article {
+  background-color: $gray;
+  height: max-content;
+  width: max-content;
+  border-radius: 0.5em;
+  padding: 1.3em;
+}
+
+article h4,
+article > div {
+  margin-bottom: 0.5em;
+}
+
+article > div {
+  display: flex;
+  gap: 1em;
+}
+
+article div h3:first-child {
+  margin-bottom: 0.2em;
 }
 
 #start {
@@ -130,18 +173,20 @@ main {
   width: 100%;
 }
 
-footer p {
-  background-color: $primary;
+#notification {
+  background-color: $tint;
+  border-radius: 1em;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
   height: 4em;
-  margin: 0;
-  display: flex;
+  width: 12em;
+  display: none;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 
-footer p a img[alt]:hover,
-a:hover {
-  color: $hover;
+#notification p {
+  padding: 0 2em;
 }
 
