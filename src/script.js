@@ -15,6 +15,8 @@ const precip = document.getElementById('precipitation')
 const humid = document.getElementById('humidity')
 const coverage = document.getElementById('coverage')
 const gust = document.getElementById('gust')
+const start = document.getElementById('start')
+const current = document.getElementById('current')
 
 const key = '4eb1171f375141c7a8a122848231010'
 
@@ -24,10 +26,19 @@ async function getWeather(city) {
   return await response.json()
 }
 
-async function displayWeather(city) {
-  const weather = await getWeather(city)
-  title.textContent = `${weather.location.name}, ${weather.location.region}, ${weather.location.country}`
-  time.textContent = new Date().toLocaleString('en-US', { timeStyle: 'short' })
+function timeFormat(text) {
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  })
+  const parsed = new Date(text)
+  return formatter.format(parsed)
+}
+
+async function displayWeather(weather) {
+  title.textContent = `${weather.location.name}, ${weather.location.country}`
+  time.textContent = `${timeFormat(weather.location.localtime)}`
   temperature.textContent = `${weather.current.temp_c}°C`
   overview.textContent = weather.current.condition.text
   cloud.src = weather.current.condition.icon
@@ -40,10 +51,13 @@ async function displayWeather(city) {
   gust.textContent = `${weather.current.gust_kph} km/h`
 }
 
-form.addEventListener('keypress', e => {
+form.addEventListener('keypress', async e => {
   if (e.key === 'Enter') {
     e.preventDefault()
-    displayWeather(search.value)
+    const weather = await getWeather(search.value)
+    displayWeather(weather)
+    start.style.display = 'none'
+    current.style.display = 'block'
     form.reset()
   }
 })

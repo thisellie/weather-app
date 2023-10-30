@@ -10,6 +10,10 @@ $gray2: rgb(92, 92, 92);
 $light: rgb(245, 245, 245);
 $light2: rgb(212, 212, 212);
 
+::selection {
+  background: $secondary;
+}
+
 h1,
 h2,
 h3,
@@ -78,23 +82,36 @@ main {
   align-items: center;
 }
 
-#card {
+.card {
+  background-color: $tint;
   width: clamp(600px, 50%, 700px);
+  border-radius: 1em;
+  margin-bottom: 1em;
+  padding: 2em;
+}
+
+#start {
+  margin-bottom: 5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#start p {
+  text-align: center;
+  font-size: larger;
+}
+
+#current {
+  display: none;
 }
 
 #head {
-  margin-bottom: 0.5em;
+  width: clamp(600px, 50%, 700px);
+  margin-bottom: 1em;
   display: flex;
   align-items: center;
-  gap: 0.7em;
-}
-
-#content {
-  background-color: $tint;
-  height: min-content;
-  border-radius: 1em;
-  margin-bottom: 5em;
-  padding: 2em;
+  gap: 0.5em;
 }
 
 #content #top,
@@ -120,7 +137,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 footer p a img[alt]:hover,
