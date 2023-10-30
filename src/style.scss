@@ -70,36 +70,46 @@ form {
   outline: 3px solid $focus;
 }
 
-// TODO: Find a font
 main {
   flex: 1;
   display: flex !important;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 #card {
+  width: clamp(600px, 50%, 700px);
+}
+
+#head {
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+
+#content {
   background-color: $tint;
   height: min-content;
-  width: clamp(600px, 50%, 700px);
-  margin-top: 2em;
   border-radius: 1em;
+  margin-bottom: 5em;
   padding: 2em;
 }
 
-#card #top,
-#card #mid {
+#content #top,
+#content #mid {
   margin-bottom: 1em;
 }
 
-#card #mid,
-#card #bot {
+#content #mid,
+#content #bot {
   display: flex;
   align-items: center;
   gap: 1em;
 }
 
-#card #bot .detail {
+#content #bot .detail {
   width: 100%;
 }
 

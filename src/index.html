@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>thisellie's Weather App</title>
+  <script src="bundle.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <nav>
+    <h2>thisellie's Weather App</h2>
+    <form>
+      <input type="text" name="search" id="search">
+    </form>
+  </nav>
+  <main>
+    <div id="card">
+      <div id="head">
+        <img src="src/assets/home.svg" alt="Home icon">
+        <h2 id="title">Manila</h2>
+      </div>
+      <div id="content">
+        <div id="top">
+          <h4>Current weather</h4>
+          <p id="time">5:00 PM</p>
+        </div>
+        <div id="mid">
+          <img id="cloud" src="" alt="Cloud icon">
+          <h2 id="temperature">28°C</h2>
+          <div>
+            <h3 id="overview">Cloudy</h3>
+            <p id="feels">Feels like 31°C</p>
+          </div>
+        </div>
+        <div id="bot">
+          <div class="detail">
+            <p>Wind</p>
+            <h4 id="wind">9 km/h</h4>
+          </div>
+          <div class="detail">
+            <p>Pressure</p>
+            <h4 id="pressure">1010 mb</h4>
+          </div>
+          <div class="detail">
+            <p>Precipitation</p>
+            <h4 id="precipitation">0.23 mm</h4>
+          </div>
+          <div class="detail">
+            <p>Humidity</p>
+            <h4 id="humidity">86%</h4>
+          </div>
+          <div class="detail">
+            <p>Cloud coverage</p>
+            <h4 id="coverage">31%</h4>
+          </div>
+          <div class="detail">
+            <p>Gust</p>
+            <h4 id="gust">14.5 km/h</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>
+      Created by thisellie
+      <a href="https://github.com/thisellie" target="">
+        <img width="16px" height="16px" src="assets/github-mark.png" alt="GitHub logo">
+      </a>
+    </p>
+  </footer>
+</body>
+
+</html>
