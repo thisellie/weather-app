@@ -51,6 +51,17 @@ nav {
   gap: 1em;
 }
 
+nav #nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+nav #nav-left a img {
+  height: 25px;
+  width: 25px;
+}
+
 form {
   height: min-content;
   width: min-content;
@@ -99,6 +110,29 @@ section {
   flex: 1;
 }
 
+.day {
+  background-color: $gray;
+  height: auto;
+  width: max-content;
+  border-radius: 0.5em;
+  padding: 1.3em;
+}
+
+.day > div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.day div h4:first-child {
+  margin-bottom: 0.2em;
+}
+
+.day > div img {
+  height: 48px;
+  width: 48px;
+}
+
 #forecast > h2 {
   margin-bottom: 1em;
 }
@@ -107,29 +141,12 @@ section {
   margin-left: auto;
 }
 
-#forecast-right h3 {
+#forecast-right p,
+#forecast-right h4 {
   text-align: right;
 }
 
-article {
-  background-color: $gray;
-  height: max-content;
-  width: max-content;
-  border-radius: 0.5em;
-  padding: 1.3em;
-}
-
-article h4,
-article > div {
-  margin-bottom: 0.5em;
-}
-
-article > div {
-  display: flex;
-  gap: 1em;
-}
-
-article div h3:first-child {
+#forecast-right p {
   margin-bottom: 0.2em;
 }
 
@@ -145,7 +162,8 @@ article div h3:first-child {
   font-size: larger;
 }
 
-#current {
+#current,
+#forecast {
   display: none;
 }
 
@@ -157,7 +175,10 @@ article div h3:first-child {
   gap: 0.5em;
 }
 
-#content #top,
+#content #top {
+  margin-bottom: 0.5em;
+}
+
 #content #mid {
   margin-bottom: 1em;
 }

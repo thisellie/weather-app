@@ -11,19 +11,22 @@
 
 <body>
   <nav>
-    <h2>thisellie's Weather App</h2>
+    <div id="nav-left">
+      <h2>thisellie's Weather App</h2>
+      <a href="https://github.com/thisellie"><img src="assets/github-mark-white.svg" alt="GitHub Logo"></a>
+    </div>
     <form>
       <input type="text" name="search" id="search">
     </form>
   </nav>
   <main>
-    <div class="card" id="start">
+    <section id="start">
       <img src="assets/favicon.ico">
       <div>
         <h2>Try searching a <em>city!</em></h2>
         <p>Search at the <u>top-right</u> of the navbar</p>
       </div>
-    </div>
+    </section>
     <section id="current">
       <div id="head">
         <img src="assets/home.svg" alt="Home icon">
@@ -32,40 +35,40 @@
       <div id="content">
         <div id="top">
           <h4>Current weather</h4>
-          <p id="time">00:00 AM</p>
+          <p id="time"></p>
         </div>
         <div id="mid">
           <img id="cloud" src="assets/favicon.ico">
-          <h2 id="temperature">0°C</h2>
+          <h2 id="temperature"></h2>
           <div>
-            <h3 id="overview">Foggy</h3>
-            <p id="feels">Feels like 0°C</p>
+            <h3 id="overview"></h3>
+            <p id="feels"></p>
           </div>
         </div>
         <div id="bot">
           <div class="detail">
             <p>Wind</p>
-            <h4 id="wind">0 km/h</h4>
+            <h4 id="wind"></h4>
           </div>
           <div class="detail">
             <p>Pressure</p>
-            <h4 id="pressure">0 mb</h4>
+            <h4 id="pressure"></h4>
           </div>
           <div class="detail">
             <p>Precipitation</p>
-            <h4 id="precipitation">0 mm</h4>
+            <h4 id="precipitation"></h4>
           </div>
           <div class="detail">
             <p>Humidity</p>
-            <h4 id="humidity">0%</h4>
+            <h4 id="humidity"></h4>
           </div>
           <div class="detail">
-            <p>Cloud coverage</p>
-            <h4 id="coverage">0%</h4>
+            <p>Coverage</p>
+            <h4 id="coverage"></h4>
           </div>
           <div class="detail">
             <p>Gust</p>
-            <h4 id="gust">0 km/h</h4>
+            <h4 id="gust"></h4>
           </div>
         </div>
       </div>
@@ -73,37 +76,37 @@
     <section id="forecast">
       <h2>3 Day Forecast</h2>
       <div id="slide">
-        <article>
+        <article class="day">
           <h4>Today</h4>
           <div>
             <img src="assets/favicon.ico" alt="Weather Icon">
             <div>
-              <h3>90°C</h3>
-              <h3>80°C</h3>
+              <h3></h3>
+              <h3></h3>
             </div>
             <div id="forecast-right">
-              <h3>Partly rainy</h3>
-              <h3>7%</h3>
+              <p></p>
+              <h4></h4>
             </div>
           </div>
         </article>
-        <article>
-          <h4>Tomorrow</h4>
+        <article class="day">
+          <h4></h4>
           <div>
             <img src="assets/favicon.ico" alt="Weather Icon">
             <div>
-              <h3>90°C</h3>
-              <h3>80°C</h3>
+              <h3></h3>
+              <h3></h3>
             </div>
           </div>
         </article>
-        <article>
-          <h4>November 1</h4>
+        <article class="day">
+          <h4></h4>
           <div>
             <img src="assets/favicon.ico" alt="Weather Icon">
             <div>
-              <h3>90°C</h3>
-              <h3>80°C</h3>
+              <h3></h3>
+              <h3></h3>
             </div>
           </div>
         </article>
